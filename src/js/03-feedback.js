@@ -28,8 +28,7 @@ function onFormSubmit(e){
     if (refs.input.value === '' || refs.textarea.value === '') {
         alert ("Заповніть поля")
     }
-
-    console.log('Відправляємо форму');
+    console.log(formData);
     e.currentTarget.reset();
     localStorage.removeItem(STORAGE_KEY);
 };
@@ -44,5 +43,6 @@ function populateTextarea() {
     if (parseSavedMessage) {
         refs.input.value = parseSavedMessage.email;
         refs.textarea.value = parseSavedMessage.message;
+        console.log(parseSavedMessage);
     }
 }
